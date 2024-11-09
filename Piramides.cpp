@@ -1,5 +1,6 @@
 #include <iostream>
 #include <locale>
+#include <fstream>
 
 using namespace std;
 int pirDydis (int a)
@@ -22,11 +23,13 @@ int kalad (int a)
 }
 
 int main(){
+    ifstream in("U1.txt");
+    ofstream out("U1rez.txt");
     int a;
-    cin >> a;
+    in >> a;
     while (a != 0 ){
         int dydis = pirDydis(a);
-        cout << dydis << endl;
+        out << dydis << endl;
         a = a - kalad(dydis);
     }
     return 0;
